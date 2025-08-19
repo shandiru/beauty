@@ -12,8 +12,11 @@ export default function Header() {
       <div className="lg:hidden grid grid-cols-[1fr_auto_1fr] items-center px-5 py-3">
         <span aria-hidden className="block" />
         <a href="/" className="justify-self-center">
-          {/* Increased ONLY for mobile/tablet */}
-          <img src="/logo-removebg-preview.png" alt="Sanera Minds" className="h-20 sm:h-24 w-full" />
+          <img
+            src="/logo png.png"
+            alt="Sanera Minds"
+            className="h-12 sm:h-14 w-auto"
+          />
         </a>
         <button
           type="button"
@@ -28,7 +31,7 @@ export default function Header() {
         </button>
       </div>
 
-      {/* DESKTOP BAR — visible >= lg (unchanged layout) */}
+      {/* DESKTOP BAR — visible >= lg */}
       <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center gap-6 min-h-24 px-6 lg:px-1 max-w-7xl mx-auto">
         {/* LEFT NAV */}
         <nav aria-label="Primary (left)" className="hidden lg:flex items-center gap-8">
@@ -77,9 +80,13 @@ export default function Header() {
           <a href="/price-list" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">Price list</a>
         </nav>
 
-        {/* CENTER LOGO (desktop sizes unchanged) */}
+        {/* CENTER LOGO (further reduced on desktop) */}
         <a href="/" aria-label="Sanera Minds" className="flex items-center justify-center shrink-0">
-          <img src="/logo.jpeg" alt="Sanera Minds" className="h-14 lg:h-16 xl:h-20 w-auto" />
+          <img
+            src="/logo png.png"
+            alt="Sanera Minds"
+            className="h-8 lg:h-5 xl:h-6 w-full"
+          />
         </a>
 
         {/* RIGHT NAV */}

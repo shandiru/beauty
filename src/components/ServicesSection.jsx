@@ -31,33 +31,35 @@ export default function ServicesSection() {
 
   return (
     <section className="bg-[#eff0ea]">
-      {/* Top Banner with Overlay Text */}
+      {/* Top Banner with Overlay Gradient */}
       <div className="relative h-[300px] w-full">
         <img
           src="/images/banner.jpg"
           alt="Services"
           className="object-cover w-full h-full"
         />
-        <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-          <h2 className="text-white text-4xl md:text-5xl font-semibold tracking-wide">Services</h2>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#062016]/80 to-[#11604b]/80 flex items-center justify-center">
+          <h2 className="text-white text-4xl md:text-5xl font-bold tracking-wider uppercase">
+            Services
+          </h2>
         </div>
       </div>
 
       {/* Services Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, idx) => (
           <a
             key={idx}
             href={service.href}
-            className="relative block overflow-hidden rounded-lg shadow-md group"
+            className="relative block rounded-lg shadow-lg group overflow-hidden transition-all duration-300"
           >
             <img
               src={service.image}
               alt={service.title}
-              className="object-cover w-full h-[300px] transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-              <h3 className="text-white text-xl md:text-2xl font-medium text-center">
+            <div className="absolute inset-0 bg-[#062016]/20 group-hover:bg-[#11604b]/60 transition duration-300 flex items-center justify-center">
+              <h3 className="text-[#062016] group-hover:text-white text-xl md:text-2xl font-semibold text-center tracking-wide">
                 {service.title}
               </h3>
             </div>

@@ -13,7 +13,7 @@ export default function Header() {
         <span aria-hidden className="block" />
         <a href="/" className="justify-self-center">
           {/* Increased ONLY for mobile/tablet */}
-          <img src="/logo.jpeg" alt="Sanera Minds" className="h-20 sm:h-24 w-full" />
+          <img src="/logo-removebg-preview.png" alt="Sanera Minds" className="h-20 sm:h-24 w-full" />
         </a>
         <button
           type="button"

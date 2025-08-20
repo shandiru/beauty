@@ -15,7 +15,7 @@ export default function Header() {
           <img
             src="/logo png.png"
             alt="Sanera Minds"
-            className="h-12 sm:h-14 w-auto"
+            className="h-8 sm:h-14 w-auto"
           />
         </a>
         <button

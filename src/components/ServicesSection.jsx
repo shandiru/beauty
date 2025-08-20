@@ -38,28 +38,28 @@ export default function ServicesSection() {
           alt="Services"
           className="object-cover w-full h-full"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#062016]/80 to-[#11604b]/80 flex items-center justify-center">
-          <h2 className="text-white text-4xl md:text-5xl font-bold tracking-wider uppercase">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#062016]/90 to-[#11604b]/90 flex items-center justify-center">
+          <h2 className="text-[#062016]/90 text-4xl md:text-5xl font-semibold tracking-wider uppercase drop-shadow-md">
             Services
           </h2>
         </div>
       </div>
 
       {/* Services Grid */}
-      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {services.map((service, idx) => (
           <a
             key={idx}
             href={service.href}
-            className="relative block rounded-lg shadow-lg group overflow-hidden transition-all duration-300"
+            className="relative block rounded-2xl shadow-md group overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
           >
             <img
               src={service.image}
               alt={service.title}
               className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-[#062016]/20 group-hover:bg-[#11604b]/60 transition duration-300 flex items-center justify-center">
-              <h3 className="text-[#062016] group-hover:text-white text-xl md:text-2xl font-semibold text-center tracking-wide">
+            <div className="absolute inset-0 bg-[#062016]/30 group-hover:bg-[#11604b]/70 transition-all duration-500 flex items-center justify-center">
+              <h3 className="text-[#062016]/80 group-hover:text-[#eff0ea] text-xl md:text-2xl font-medium text-center tracking-wide drop-shadow-sm transition-colors duration-300">
                 {service.title}
               </h3>
             </div>

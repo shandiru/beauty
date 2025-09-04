@@ -1,4 +1,4 @@
-export default function AboutContentWithImage() {
+export default function Aboutcontentwithimage() {
   return (
     <section className="bg-white py-20 px-6">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">

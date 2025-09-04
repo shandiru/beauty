@@ -11,12 +11,16 @@ export default function Header() {
       {/* MOBILE+TABLET BAR — visible < lg */}
       <div className="lg:hidden grid grid-cols-[1fr_auto_1fr] items-center px-5 py-3">
         <span aria-hidden className="block" />
-        <a href="/" className="justify-self-center">
+        <a href="/" className="justify-self-center flex flex-col items-center">
           <img
             src="/logo png.png"
             alt="Sanera Minds"
-            className="h-8 sm:h-14 w-auto"
+            className="h-10 sm:h-16 w-auto"
           />
+          {/* Slogan (closer to the logo) */}
+          <span className="-mt-1 text-xs sm:text-sm text-[#062016]/90 tracking-[0.08em] text-center">
+            empowering a new era of mental wellness
+          </span>
         </a>
         <button
           type="button"
@@ -32,70 +36,80 @@ export default function Header() {
       </div>
 
       {/* DESKTOP BAR — visible >= lg */}
-      <div className="hidden lg:grid grid-cols-[1fr_auto_1fr] items-center gap-6 min-h-24 px-6 lg:px-1 max-w-7xl mx-auto">
-        {/* LEFT NAV */}
-        <nav aria-label="Primary (left)" className="hidden lg:flex items-center gap-8">
-          <a href="/" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">Home</a>
+      <div className="hidden lg:flex flex-col items-center max-w-7xl mx-auto">
+        {/* NAV ROW */}
+        <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-6 min-h-24 px-6 lg:px-1 w-full">
+          {/* LEFT NAV */}
+          <nav aria-label="Primary (left)" className="hidden lg:flex items-center gap-8">
+            <a href="/" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">Home</a>
 
-          <div
-            className="relative group"
-            onMouseEnter={() => setOpenServices(true)}
-            onMouseLeave={() => setOpenServices(false)}
-          >
-            <button
-              type="button"
-              aria-haspopup="menu"
-              aria-expanded={openServices}
-              onClick={() => setOpenServices(s => !s)}
-              className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition"
+            <div
+              className="relative group"
+              onMouseEnter={() => setOpenServices(true)}
+              onMouseLeave={() => setOpenServices(false)}
             >
-              Services <span className="ml-1 text-[12px] opacity-80">▾</span>
-            </button>
+              <button
+                type="button"
+                aria-haspopup="menu"
+                aria-expanded={openServices}
+                onClick={() => setOpenServices(s => !s)}
+                className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition"
+              >
+                Services <span className="ml-1 text-[12px] opacity-80">▾</span>
+              </button>
 
-            <ul
-              role="menu"
-              className={[
-                "absolute left-0 mt-3 min-w-64 rounded-xl border border-[#11604b]/25 bg-white shadow-xl p-2 z-50",
-                openServices ? "block" : "hidden",
-                "group-hover:block focus-within:block"
-              ].join(' ')}
-            >
-              {[
-                { label: 'Organisations', href: '/services/organisations' },
-                { label: 'Education', href: '/services/education' },
-                { label: 'Workshops', href: '/services/workshops' },
-                { label: 'Resources', href: '/services/resources' },
-                { label: 'Contact us', href: '/contact' },
-              ].map(item => (
-                <li key={item.label}>
-                  <a role="menuitem" href={item.href} className="block px-3 py-2 rounded-lg text-[15px] tracking-[0.02em] text-[#062016] hover:bg-[#eff0ea]">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <ul
+                role="menu"
+                className={[
+                  "absolute left-0 mt-3 min-w-64 rounded-xl border border-[#11604b]/25 bg-white shadow-xl p-2 z-50",
+                  openServices ? "block" : "hidden",
+                  "group-hover:block focus-within:block"
+                ].join(' ')}
+              >
+                {[
+                  { label: 'Organisations', href: '/services/organisations' },
+                  { label: 'Education', href: '/services/education' },
+                  { label: 'Workshops', href: '/services/workshops' },
+                  { label: 'Resources', href: '/services/resources' },
+                  { label: 'Contact us', href: '/contact' },
+                ].map(item => (
+                  <li key={item.label}>
+                    <a role="menuitem" href={item.href} className="block px-3 py-2 rounded-lg text-[15px] tracking-[0.02em] text-[#062016] hover:bg-[#eff0ea]">
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <a href="/about" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">About me</a>
-          <a href="/price-list" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">Price list</a>
-        </nav>
+            <a href="/about" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">About me</a>
+           
+          </nav>
 
-        {/* CENTER LOGO (further reduced on desktop) */}
-        <a href="/" aria-label="Sanera Minds" className="flex items-center justify-center shrink-0">
-          <img
-            src="/logo png.png"
-            alt="Sanera Minds"
-            className="h-8 lg:h-5 xl:h-6 w-full"
-          />
-        </a>
+          {/* CENTER LOGO */}
+          <a href="/" aria-label="Sanera Minds" className="flex items-center justify-center shrink-0">
+            <img
+              src="/logo png.png"
+              alt="Sanera Minds"
+              className="h-10 lg:h-8 xl:h-10 w-auto"
+            />
+          </a>
 
-        {/* RIGHT NAV */}
-        <nav aria-label="Primary (right)" className="hidden lg:flex items-center gap-8 justify-end">
-          <a href="/contact" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">Contact us</a>
-          <a href="/faqs" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">FAQs</a>
-          <a href="/blog" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">Blog</a>
-          <a href="/appointments" className="px-4 py-3 rounded-lg uppercase tracking-[0.15em] text-[14px] font-bold bg-[#11604b] text-white hover:opacity-90 transition">Book Now</a>
-        </nav>
+          {/* RIGHT NAV */}
+          <nav aria-label="Primary (right)" className="hidden lg:flex items-center gap-8 justify-end">
+            <a href="/contact" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">Contact us</a>
+            <a href="/faqs" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">FAQs</a>
+           
+            <a href="/appointments" className="px-4 py-3 rounded-lg uppercase tracking-[0.15em] text-[14px] font-bold bg-[#11604b] text-white hover:opacity-90 transition">Book Now</a>
+          </nav>
+        </div>
+
+        {/* SLOGAN ROW — bigger & pulled up closer to the logo */}
+        <div className="-mt-4 mb-3">
+          <p className="text-[14px] lg:text-[15px] text-[#062016]/90 tracking-[0.08em] text-center">
+            empowering a new era of mental wellness
+          </p>
+        </div>
       </div>
 
       {/* MOBILE/TABLET PANEL — visible < lg */}
@@ -103,6 +117,7 @@ export default function Header() {
         <nav className="flex flex-col py-2">
           <a href="/" className="px-6 py-3 uppercase tracking-[0.18em] text-[13px] text-[#062016]">Home</a>
 
+        {/* Services dropdown for mobile */}
           <button
             type="button"
             aria-expanded={openMobileServices}
@@ -127,10 +142,10 @@ export default function Header() {
           </div>
 
           <a href="/about" className="px-6 py-3 uppercase tracking-[0.18em] text-[13px] text-[#062016]">About me</a>
-          <a href="/price-list" className="px-6 py-3 uppercase tracking-[0.18em] text-[13px] text-[#062016]">Price list</a>
+        
           <a href="/contact" className="px-6 py-3 uppercase tracking-[0.18em] text-[13px] text-[#062016]">Contact us</a>
           <a href="/faqs" className="px-6 py-3 uppercase tracking-[0.18em] text-[13px] text-[#062016]">FAQs</a>
-          <a href="/blog" className="px-6 py-3 uppercase tracking-[0.18em] text-[13px] text-[#062016]">Blog</a>
+          
           <a href="/appointments" className="mx-6 my-3 text-center px-4 py-3 rounded-lg uppercase tracking-[0.15em] text-[14px] font-bold bg-[#11604b] text-white hover:opacity-90 transition">
             Book Now
           </a>

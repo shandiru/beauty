@@ -7,6 +7,7 @@ import AboutIntro from "../components/AboutPage/AboutIntro";
 import AboutContent from "../components/AboutPage/AboutContent";
 import AboutWorkWith from "../components/AboutPage/AboutWorkWith";
 import AboutClosing from "../components/AboutPage/AboutClosing";
+import AboutContentWithImage from "../components/AboutPage/AboutContentWithImage.JSX";
 function About() {
   return (
     <>
@@ -14,6 +15,7 @@ function About() {
       <Aboutbanner />
       <AboutIntro />
       <AboutContent />
+      <AboutContentWithImage />
       <AboutWorkWith />
       <AboutClosing />
 

@@ -52,7 +52,7 @@ function AboutBanner() {
       />
       <div className="absolute inset-0 flex items-center justify-center text-center px-6">
         <h1 ref={titleRef} className="font-display text-white text-4xl md:text-5xl font-bold uppercase tracking-wide">
-          About Us
+          <span className="small-caps">About</span> <span className="italic">Sanera Minds</span>
         </h1>
       </div>
     </div>

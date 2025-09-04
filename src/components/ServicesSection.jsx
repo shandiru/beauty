@@ -4,27 +4,22 @@ export default function ServicesSection() {
   const services = [
     {
       title: 'Organisations',
-      image: '/images/org.jpg',
       href: '/services/organisations',
     },
     {
       title: 'Education',
-      image: '/images/edu.jpg',
       href: '/services/education',
     },
     {
       title: 'Workshops',
-      image: '/images/workshops.jpg',
       href: '/services/workshops',
     },
     {
       title: 'Resources',
-      image: '/images/resources.jpg',
       href: '/services/resources',
     },
     {
       title: 'Contact Us',
-      image: '/images/contact.jpg',
       href: '/contact',
     },
   ]
@@ -39,7 +34,7 @@ export default function ServicesSection() {
           className="object-cover w-full h-full"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#062016]/90 to-[#11604b]/90 flex items-center justify-center">
-          <h2 className="text-[#062016]/90 text-4xl md:text-5xl font-semibold tracking-wider uppercase drop-shadow-md">
+          <h2 className="text-white text-4xl md:text-5xl font-semibold tracking-wider uppercase drop-shadow-md">
             Services
           </h2>
         </div>
@@ -51,15 +46,10 @@ export default function ServicesSection() {
           <a
             key={idx}
             href={service.href}
-            className="relative block rounded-2xl shadow-md group overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+            className="relative block rounded-2xl shadow-md group overflow-hidden transform transition-all duration-500 hover:-translate-y-2 hover:shadow-xl bg-[#11604b]"
           >
-            <img
-              src={service.image}
-              alt={service.title}
-              className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-            <div className="absolute inset-0 bg-[#062016]/30 group-hover:bg-[#11604b]/70 transition-all duration-500 flex items-center justify-center">
-              <h3 className="text-[#062016]/80 group-hover:text-[#eff0ea] text-xl md:text-2xl font-medium text-center tracking-wide drop-shadow-sm transition-colors duration-300">
+            <div className="flex items-center justify-center h-[300px]">
+              <h3 className="text-white group-hover:text-[#eff0ea] text-xl md:text-2xl font-semibold text-center tracking-wide transition-colors duration-300">
                 {service.title}
               </h3>
             </div>

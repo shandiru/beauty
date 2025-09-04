@@ -19,7 +19,7 @@ export default function Header() {
           />
           {/* Slogan (closer to the logo) */}
           <span className="-mt-1 text-xs sm:text-sm text-[#062016]/90 tracking-[0.08em] text-center">
-            empowering a new era of mental wellness
+            EMPOWERING A NEW ERA OF MENTAL WELLNESS
           </span>
         </a>
         <button
@@ -107,7 +107,7 @@ export default function Header() {
         {/* SLOGAN ROW — bigger & pulled up closer to the logo */}
         <div className="-mt-4 mb-3">
           <p className="text-[14px] lg:text-[15px] text-[#062016]/90 tracking-[0.08em] text-center">
-            empowering a new era of mental wellness
+            EMPOWERING A NEW ERA OF MENTAL WELLNESS
           </p>
         </div>
       </div>

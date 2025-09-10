@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 /* make `dark:` respond to .dark on <html> */
-@custom-variant dark (&:where(.dark, .dark *));  /* <-- add this line */
+@custom-variant dark (&:where(.dark, .dark *));
 
 html, body {
   width: 100%;
@@ -10,24 +10,30 @@ html, body {
   scroll-behavior: smooth;
 }
 
-:root{
+:root {
   --brand-deep:#062016;
   --brand-teal:#11604b;
   --brand-bg:#eff0ea;
 }
 
-/* Font utility classes to use in JSX */
-.font-display{ font-family: "Cormorant Garamond", serif; }
-.font-body{ font-family: "Libre Baskerville", serif; }
+/* Font utility classes */
+.font-display { font-family: "Cormorant Garamond", serif; }
+.font-body { font-family: "Libre Baskerville", serif; }
 
-/* Classic small-caps helper (like your sample) */
-.small-caps{
+/* ✅ Sanera brand heading font (Times New Roman family) */
+.font-sanera { font-family: "Times New Roman", Georgia, serif; }
+
+/* Classic small-caps helper */
+.small-caps {
   font-variant: small-caps;
-  letter-spacing:.08em;
+  letter-spacing: .12em;   /* more airy spacing */
+  text-transform: none;    /* don’t force uppercase */
 }
 
-/* Subtle paragraph rhythm */
-.copy{
-  line-height:1.8;
-  letter-spacing:.01em;
+/* ✅ Special banner heading style */
+.banner-title {
+  @apply font-sanera text-white drop-shadow-lg;
+  font-variant: small-caps;   /* elegant classic caps */
+  letter-spacing: 0.15em;     /* wide spacing */
+  font-weight: 400;           /* normal, not bold */
 }

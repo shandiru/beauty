@@ -7,7 +7,7 @@ export default function Header() {
   const [openMobileServices, setOpenMobileServices] = useState(false)
 
   return (
-    <header className="font-sanera bg-[#eff0ea] border-b border-[#11604b]/20 relative z-[1000]">
+    <header className="bg-[#eff0ea] border-b border-[#11604b]/20 relative z-[1000]">
       {/* MOBILE+TABLET BAR — visible < lg */}
       <div className="lg:hidden grid grid-cols-[1fr_auto_1fr] items-center px-5 py-3">
         <span aria-hidden className="block" />
@@ -83,6 +83,7 @@ export default function Header() {
             </div>
 
             <a href="/about" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">About me</a>
+           
           </nav>
 
           {/* CENTER LOGO */}
@@ -98,11 +99,12 @@ export default function Header() {
           <nav aria-label="Primary (right)" className="hidden lg:flex items-center gap-8 justify-end">
             <a href="/contact" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">Contact us</a>
             <a href="/faqs" className="px-3 py-2 rounded-md uppercase tracking-[0.18em] text-[14px] text-[#062016] hover:bg-[#11604b] hover:text-white transition">FAQs</a>
+           
             <a href="/appointments" className="px-4 py-3 rounded-lg uppercase tracking-[0.15em] text-[14px] font-bold bg-[#11604b] text-white hover:opacity-90 transition">Book Now</a>
           </nav>
         </div>
 
-        {/* SLOGAN ROW */}
+        {/* SLOGAN ROW — bigger & pulled up closer to the logo */}
         <div className="-mt-4 mb-3">
           <p className="text-[14px] lg:text-[15px] text-[#062016]/90 tracking-[0.08em] text-center">
             EMPOWERING A NEW ERA OF MENTAL WELLNESS
@@ -115,7 +117,7 @@ export default function Header() {
         <nav className="flex flex-col py-2">
           <a href="/" className="px-6 py-3 uppercase tracking-[0.18em] text-[13px] text-[#062016]">Home</a>
 
-          {/* Services dropdown for mobile */}
+        {/* Services dropdown for mobile */}
           <button
             type="button"
             aria-expanded={openMobileServices}
@@ -140,8 +142,10 @@ export default function Header() {
           </div>
 
           <a href="/about" className="px-6 py-3 uppercase tracking-[0.18em] text-[13px] text-[#062016]">About me</a>
+        
           <a href="/contact" className="px-6 py-3 uppercase tracking-[0.18em] text-[13px] text-[#062016]">Contact us</a>
           <a href="/faqs" className="px-6 py-3 uppercase tracking-[0.18em] text-[13px] text-[#062016]">FAQs</a>
+          
           <a href="/appointments" className="mx-6 my-3 text-center px-4 py-3 rounded-lg uppercase tracking-[0.15em] text-[14px] font-bold bg-[#11604b] text-white hover:opacity-90 transition">
             Book Now
           </a>
